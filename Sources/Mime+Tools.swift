@@ -11,7 +11,7 @@ import Foundation
 
 public extension Mime {
     
-    public static func get(fileUrl url: URL) -> MimeType? {
+    static func get(fileUrl url: URL) -> MimeType? {
         let ext: String = url.pathExtension
         guard ext != "" else {
             return nil
@@ -19,16 +19,16 @@ public extension Mime {
         return Mime.get(fileExtension: ext)
     }
     
-    public static func get(filePath path: String) -> MimeType? {
+    static func get(filePath path: String) -> MimeType? {
         let url: URL = URL(fileURLWithPath: path)
         return Mime.get(fileUrl: url)
     }
     
-    public static func string(forUrl url: URL) -> String? {
+    static func string(forUrl url: URL) -> String? {
         return Mime.get(fileUrl: url)?.rawValue
     }
     
-    public static func string(forPath path: String) -> String? {
+    static func string(forPath path: String) -> String? {
         let url: URL = URL(fileURLWithPath: path)
         return self.string(forUrl: url)
     }
