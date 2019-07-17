@@ -1,11 +1,19 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
     name: "MimeLib",
-    targets: [
-        
+    products: [
+        .library(
+            name: "MimeLib",
+            targets: ["MimeLib"]
+        ),
     ],
-    exclude: [
-        "Generator",
+    targets: [
+        .target(
+            name: "MimeLib",
+            path: "Sources"
+         ),
     ]
 )
