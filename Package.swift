@@ -15,5 +15,6 @@ let package = Package(
             name: "MimeLib",
             path: "Sources"
          ),
-    ]
+    ],
+    swiftLanguageVersions: [5, 4]
 )
